@@ -1,0 +1,17 @@
+.history-event .border, .history-event .border-right, .history-event .card {
+	border-color: article_color_h !important;
+}
+.history-event .bg-light {
+  background-color: article_color_h !important;
+}
+.history-event .card {
+	border: none;
+}
+.history-event .card-title {
+  font-weight: bold;
+}
+@media screen and (min-width: 576px) {
+	.history-event .left-card {
+		text-align: right;
+	}
+}

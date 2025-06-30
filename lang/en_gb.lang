@@ -1,0 +1,10 @@
+d2u_history = D2U History Timeline
+d2u_history_events = History Events
+d2u_history_name = Internal name
+d2u_history_no_history_found = No history events found.
+d2u_history_year = Year
+
+d2u_history_rights = D2U History addon
+d2u_history_rights_edit_data = D2U History addon: edit rights for data
+d2u_history_rights_edit_lang = D2U History addon: edit rights for translations (languages set in user roles apply)
+d2u_history_rights_settings = D2U History addon: settings
