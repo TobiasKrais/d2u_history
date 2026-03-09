@@ -1,4 +1,7 @@
 <?php
+$showChangelogOnly = defined('D2U_HISTORY_SHOW_CHANGELOG');
+
+if (!$showChangelogOnly) {
 /*
  * Modules
  */
@@ -29,6 +32,9 @@ $d2u_module_manager->showManagerList();
 <h2>Support</h2>
 <p>Fehlermeldungen bitte über das Kontaktformular unter
 	<a href="https://github.com/TobiasKrais/d2u_history" target="_blank">https://github.com/TobiasKrais/d2u_history</a> melden.</p>
+<?php } ?>
+
+<?php if ($showChangelogOnly) { ?>
 <h2>Changelog</h2>
 
 <p>1.0.2:</p>
@@ -53,3 +59,4 @@ $d2u_module_manager->showManagerList();
 <ul>
 	<li>Initiale Version.</li>
 </ul>
+<?php } ?>
