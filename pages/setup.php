@@ -37,6 +37,14 @@ $d2u_module_manager->showManagerList();
 <?php if ($showChangelogOnly) { ?>
 <h2>Changelog</h2>
 
+<p>1.1.0-DEV:</p>
+<ul>
+	<li>Neues Modul 21-2 "D2U History - Timeline (BS5)" hinzugefügt.</li>
+	<li>Modul 21-1 als "(BS4, deprecated)" markiert. Die BS4-Variante wird im nächsten Major Release entfernt.</li>
+	<li>Benötigt d2u_helper &gt;= 2.1.0.</li>
+	<li>Backend-Liste sortierbar gemacht und Standardsortierung von SQL-Query auf <code>rex_list</code>-<code>defaultSort</code> umgestellt.</li>
+</ul>
+
 <p>1.0.2:</p>
 <ul>
 	<li>PHP-CS-Fixer Code Verbesserungen.</li>
