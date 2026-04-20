@@ -6,9 +6,15 @@
 }
 .history-event .card {
 	border: none;
+	overflow: hidden;
 }
 .history-event .card-title {
   font-weight: bold;
+}
+.history-event .history-event-image img {
+	display: block;
+	width: 100%;
+	height: auto;
 }
 @media screen and (min-width: 576px) {
 	.history-event .left-card {

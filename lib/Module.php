@@ -16,8 +16,11 @@ class Module
     {
         $modules = [];
         $modules[] = new \TobiasKrais\D2UHelper\Module('21-1',
-            'D2U History - Timeline',
+            'D2U History - Timeline (BS4, deprecated)',
             2);
+        $modules[] = new \TobiasKrais\D2UHelper\Module('21-2',
+            'D2U History - Timeline (BS5)',
+            1);
         return $modules;
     }
 }
