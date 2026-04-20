@@ -3,6 +3,10 @@
 ?>
 <h2>Changelog</h2>
 
+<p>1.1.1-DEV:</p>
+<ul>
+	<li>...</li>
+</ul>
 <p>1.1.0:</p>
 <ul>
 	<li>Neues Modul 21-2 "D2U History - Timeline (BS5)" hinzugefügt.</li>
@@ -12,7 +16,6 @@
 	<li>Backend-Menü angepasst: Einstellungen und Setup sind jetzt wie im d2u_immo Addon unter einem gemeinsamen Settings-Menü gebündelt.</li>
 	<li>BS5-Modul 21-2 kann jetzt Event-Bilder ausgeben und erlaubt die Auswahl eines Media Manager Typs im Modul.</li>
 </ul>
-
 <p>1.0.2:</p>
 <ul>
 	<li>PHP-CS-Fixer Code Verbesserungen.</li>
