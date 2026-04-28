@@ -5,6 +5,7 @@
 
 <p>1.1.1-DEV:</p>
 <ul>
+	<li>Backend: CSRF-Schutz fuer Speichern-, Loesch- und Statusaktionen der Historienverwaltung ergaenzt.</li>
 	<li>...</li>
 </ul>
 <p>1.1.0:</p>
