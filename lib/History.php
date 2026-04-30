@@ -195,17 +195,17 @@ class History implements \TobiasKrais\D2UHelper\ITranslationHelper
             $query = rex::getTablePrefix() .'d2u_history SET '
                     ."online_status = '". $this->online_status ."', "
                     ."picture = '". $this->picture ."', "
-                    ."name = '". addslashes($this->name) ."', "
-                    .'year = '. $this->year;
+                    .'name = :name, '
+                    .'year = '. (int) $this->year;
 
             if (0 === $this->history_id) {
                 $query = 'INSERT INTO '. $query;
             } else {
-                $query = 'UPDATE '. $query .' WHERE history_id = '. $this->history_id;
+                $query = 'UPDATE '. $query .' WHERE history_id = '. (int) $this->history_id;
             }
 
             $result = rex_sql::factory();
-            $result->setQuery($query);
+            $result->setQuery($query, [':name' => $this->name]);
             if (0 === $this->history_id) {
                 $this->history_id = (int) $result->getLastId();
                 $error = $result->hasError();
@@ -217,13 +217,13 @@ class History implements \TobiasKrais\D2UHelper\ITranslationHelper
             $pre_save_history = new self($this->history_id, $this->clang_id);
             if ($pre_save_history !== $this) {
                 $query = 'REPLACE INTO '. rex::getTablePrefix() .'d2u_history_lang SET '
-                        .'history_id = '. $this->history_id .', '
-                        .'clang_id = '. $this->clang_id .', '
-                        ."description = '". addslashes(htmlspecialchars($this->description)) ."', "
+                        .'history_id = '. (int) $this->history_id .', '
+                        .'clang_id = '. (int) $this->clang_id .', '
+                        .'description = :description, '
                         ."translation_needs_update = '". $this->translation_needs_update ."' ";
 
                 $result = rex_sql::factory();
-                $result->setQuery($query);
+                $result->setQuery($query, [':description' => htmlspecialchars($this->description)]);
                 $error = $result->hasError();
             }
         }

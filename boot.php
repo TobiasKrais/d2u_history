@@ -47,12 +47,12 @@ function rex_d2u_history_media_is_in_use(rex_extension_point $ep)
 {
     $warning = $ep->getSubject();
     $params = $ep->getParams();
-    $filename = addslashes($params['filename']);
+    $filename = (string) $params['filename'];
 
     // History
     $sql_history = rex_sql::factory();
     $sql_history->setQuery('SELECT history_id, name FROM `' . \rex::getTablePrefix() . 'd2u_history` '
-        .'WHERE picture = "'. $filename .'"');
+        .'WHERE picture = :filename', [':filename' => $filename]);
 
     // Prepare warnings
     // History

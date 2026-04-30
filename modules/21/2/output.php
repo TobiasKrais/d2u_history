@@ -31,7 +31,7 @@ if (\rex::isBackend()) {
                 .'<div class="col">&nbsp;</div>'
             .'</div>'
             .'<h5 class="m-2">'
-                .'<span class="badge rounded-pill bg-light border">&nbsp;</span><span class="d-none">'. $event->year .'</span>'
+                .'<span class="badge rounded-pill bg-light border">&nbsp;</span><span class="d-none">'. (int) $event->year .'</span>'
             .'</h5>'
             .'<div class="row h-50">'
                 .'<div class="col'. ($counter == count($history_events) - 1 ? '' : ' border-end') .'">&nbsp;</div>'
@@ -55,7 +55,7 @@ if (\rex::isBackend()) {
             echo '</div>';
         }
         echo '<div class="card-body'. (1 == $counter % 2 ? ' left-card' : '') .'">';
-        echo '<h4 class="card-title">'. $event->year .'</h4>';
+        echo '<h4 class="card-title">'. (int) $event->year .'</h4>';
         echo '<p class="card-text">'. TobiasKrais\D2UHelper\FrontendHelper::prepareEditorField($event->description) .'</p>';
         echo '</div>';
         echo '</div>';

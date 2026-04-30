@@ -6,8 +6,9 @@
 <p>1.1.1-DEV:</p>
 <ul>
 	<li>Backend: CSRF-Schutz fuer Speichern-, Loesch- und Statusaktionen der Historienverwaltung ergaenzt.</li>
-	<li>Backend: CSRF-Schutz fuer Modul-Installation, -Update und -Deinstallation auf der Setup-Seite ergaenzt.</li>
-</ul>
+	<li>Backend: CSRF-Schutz fuer Modul-Installation, -Update und -Deinstallation auf der Setup-Seite ergaenzt.</li>        <li>Security: Die <code>media-is-in-use</code>-Extension-Points in <code>boot.php</code> verwenden jetzt gebundene Parameter statt SQL-String-Konkatenation mit <code>addslashes()</code>.</li>
+        <li>Security: Die <code>save()</code>-Methode in <code>lib/History.php</code> verwendet jetzt gebundene Parameter statt SQL-String-Konkatenation mit <code>addslashes()</code>.</li>
+        <li>Security: Modul-Ausgaben (<code>modules/21/1/output.php</code>, <code>modules/21/2/output.php</code>) härten Backend-Eingaben gegen XSS via <code>rex_escape()</code> für Event-Titel und Typecast (<code>(int)</code>) für Jahreszahlen.</li></ul>
 <p>1.1.0:</p>
 <ul>
 	<li>Neues Modul 21-2 "D2U History - Timeline (BS5)" hinzugefügt.</li>
