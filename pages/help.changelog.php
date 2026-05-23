@@ -5,6 +5,7 @@
 
 <p>1.1.1-DEV:</p>
 <ul>
+	<li>Backend: Abbrechen-Button in der Historienverwaltung fuehrt jetzt wieder zur Liste.</li>
 	<li>Backend: CSRF-Schutz fuer Speichern-, Loesch- und Statusaktionen der Historienverwaltung ergaenzt.</li>
 	<li>Backend: CSRF-Schutz fuer Modul-Installation, -Update und -Deinstallation auf der Setup-Seite ergaenzt.</li>        <li>Security: Die <code>media-is-in-use</code>-Extension-Points in <code>boot.php</code> verwenden jetzt gebundene Parameter statt SQL-String-Konkatenation mit <code>addslashes()</code>.</li>
         <li>Security: Die <code>save()</code>-Methode in <code>lib/History.php</code> verwendet jetzt gebundene Parameter statt SQL-String-Konkatenation mit <code>addslashes()</code>.</li>
