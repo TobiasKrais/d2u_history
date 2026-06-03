@@ -6,7 +6,7 @@ if (\rex::isBackend()) {
 } else {
     // FRONTEND
     
-    $last_on_top = 'REX_VALUE[1]' == 'true' ? true : false;
+    $last_on_top = 'REX_VALUE[1]' == 'true' ? true : false; /** @phpstan-ignore-line */
 
     $history_events = \TobiasKrais\D2UHistory\History::getAll(rex_clang::getCurrentId(), true);
     if ($last_on_top) {

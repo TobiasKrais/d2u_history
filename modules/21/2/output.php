@@ -9,7 +9,7 @@ if (\rex::isBackend()) {
 } else {
     // FRONTEND
 
-    $last_on_top = 'REX_VALUE[1]' === 'true';
+    $last_on_top = 'REX_VALUE[1]' === 'true'; /** @phpstan-ignore-line */
     $media_manager_type = 'REX_VALUE[2]'; /** @phpstan-ignore-line */
 
     $history_events = \TobiasKrais\D2UHistory\History::getAll(rex_clang::getCurrentId(), true);

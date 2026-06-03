@@ -58,7 +58,7 @@ function rex_d2u_history_media_is_in_use(rex_extension_point $ep)
     // History
     for ($i = 0; $i < $sql_history->getRows(); ++$i) {
         $message = '<a href="javascript:openPage(\'index.php?page=d2u_history/history&func=edit&entry_id='.
-            $sql_history->getValue('history_id') .'\')">'. rex_i18n::msg('d2u_history') .' - '. rex_i18n::msg('d2u_history_events') .': '. $sql_history->getValue('name') .'</a>';
+            $sql_history->getValue('history_id') .'\')">'. rex_i18n::msg('d2u_history') .' - '. rex_i18n::msg('d2u_history_events') .': '. rex_escape($sql_history->getValue('name')) .'</a>';
         if (!in_array($message, $warning, true)) {
             $warning[] = $message;
         }
@@ -92,7 +92,7 @@ function rex_d2u_history_translation_list(rex_extension_point $ep) {
             if ('' === $event->name) {
                 $event = new \TobiasKrais\D2UHistory\History($event->history_id, $source_clang_id);
             }
-            $html_events .= '<li><a href="'. rex_url::backendPage('d2u_history/history', ['entry_id' => $event->history_id, 'func' => 'edit']) .'">'. $event->name .'</a></li>';
+            $html_events .= '<li><a href="'. rex_url::backendPage('d2u_history/history', ['entry_id' => $event->history_id, 'func' => 'edit']) .'">'. rex_escape($event->name) .'</a></li>';
         }
         $html_events .= '</ul>';
         
