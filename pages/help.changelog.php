@@ -3,6 +3,10 @@
 ?>
 <h2>Changelog</h2>
 
+<p>1.1.2-DEV:</p>
+<ul>
+	<li>...</li>
+</ul>
 <p>1.1.1:</p>
 <ul>
 	<li>Backend: Abbrechen-Button in der Historienverwaltung fuehrt jetzt wieder zur Liste.</li>
