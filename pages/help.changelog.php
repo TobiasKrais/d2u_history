@@ -5,7 +5,7 @@
 
 <p>1.1.2-DEV:</p>
 <ul>
-	<li>...</li>
+	<li>Security/Bugfix: Die zuletzt noch per String-Konkatenation gesetzten Felder in <code>lib/History.php</code> (<code>online_status</code>, <code>picture</code>, <code>translation_needs_update</code>) verwenden jetzt ebenfalls gebundene Parameter. Verhindert SQL-Injection und <code>rex_sql_exception</code> bei Werten mit einfachen Anfuehrungszeichen.</li>
 </ul>
 <p>1.1.1:</p>
 <ul>

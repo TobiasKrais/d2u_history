@@ -193,8 +193,8 @@ class History implements \TobiasKrais\D2UHelper\ITranslationHelper
 
         if (0 === $this->history_id || $pre_save_history !== $this) {
             $query = rex::getTablePrefix() .'d2u_history SET '
-                    ."online_status = '". $this->online_status ."', "
-                    ."picture = '". $this->picture ."', "
+                    .'online_status = :online_status, '
+                    .'picture = :picture, '
                     .'name = :name, '
                     .'year = '. (int) $this->year;
 
@@ -205,7 +205,11 @@ class History implements \TobiasKrais\D2UHelper\ITranslationHelper
             }
 
             $result = rex_sql::factory();
-            $result->setQuery($query, [':name' => $this->name]);
+            $result->setQuery($query, [
+                ':online_status' => $this->online_status,
+                ':picture' => $this->picture,
+                ':name' => $this->name,
+            ]);
             if (0 === $this->history_id) {
                 $this->history_id = (int) $result->getLastId();
                 $error = $result->hasError();
@@ -220,10 +224,13 @@ class History implements \TobiasKrais\D2UHelper\ITranslationHelper
                         .'history_id = '. (int) $this->history_id .', '
                         .'clang_id = '. (int) $this->clang_id .', '
                         .'description = :description, '
-                        ."translation_needs_update = '". $this->translation_needs_update ."' ";
+                        .'translation_needs_update = :translation_needs_update ';
 
                 $result = rex_sql::factory();
-                $result->setQuery($query, [':description' => htmlspecialchars($this->description)]);
+                $result->setQuery($query, [
+                    ':description' => htmlspecialchars($this->description),
+                    ':translation_needs_update' => $this->translation_needs_update,
+                ]);
                 $error = $result->hasError();
             }
         }
