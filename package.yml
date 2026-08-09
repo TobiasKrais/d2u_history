@@ -23,6 +23,7 @@ page:
                 changelog: { title: 'translate:d2u_helper_help_chapter_changelog' }
 
 requires:
+    redaxo: '>=5.10.0'
     packages:
         d2u_helper: '>=2.1.0'
     php: '>=8.0'
